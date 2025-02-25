@@ -21,4 +21,4 @@ print(
 name = "estudiante de DAM"
 print(
     f"Hola {name}"
-)  # Va a imprimir "Hola " y lo que tenga name, este caso "Estudiante de DAM"
+)  # Va a imprimir "Hola " y lo que tenga name, este caso "estudiante de DAM"
