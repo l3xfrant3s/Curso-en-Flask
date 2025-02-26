@@ -34,3 +34,5 @@ def divide(dividend, divisor):
 
 # Se recomienda usar argumentos nombrados para facilitar la lectura del código
 divide(dividend=15, divisor=0)
+
+# Se pueden pasar argumentos posicionales y nombrados en la misma llamada, pero los posicionales se ponen primero
