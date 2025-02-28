@@ -1,5 +1,6 @@
 class Book:
-    TYPES = ("hardcover", "paperback")  # Esta propiedad es de clase
+    TYPES = ("hardcover", "paperback")
+    # Esta propiedad es de clase, eso significa que no tienes que crear un objecto para acceder a ella
 
     def __init__(self, name, book_type, weight):
         self.name = name
