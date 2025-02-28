@@ -1,3 +1,10 @@
+"""
+This coding exercise has three parts. See them outlined in detail in the coding exercise, as comments.
+    - Create a dictionary variable, called student .
+    - Modify a variable, grades , so it contains the value of a dictionary's key.
+    - Implement a function calculating a total average grade for a class of students.
+"""
+
 # Create a variable called student, with a dictionary.
 # The dictionary must contain three keys: 'name', 'school', and 'grades'.
 # The values for each must be 'Jose', 'Computing', and a tuple with the values 66, 77, and 88.

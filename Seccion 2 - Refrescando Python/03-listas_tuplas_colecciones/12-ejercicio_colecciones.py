@@ -1,3 +1,10 @@
+"""
+This coding exercise requires you to complete three steps:
+    Create a list, called my_list , with three numbers. The total of the numbers added together should be 100.
+    Create a tuple, called my_tuple , with a single value in it
+    Modify the variable set2  so that set1.intersection(set2)  returns {5, 77, 9, 12}
+"""
+
 # Create a list, called my_list, with three numbers. The total of the numbers added together should be 100.
 
 my_list = [25, 35, 40]
