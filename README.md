@@ -4,7 +4,7 @@ En este repositorio voy a ir poniendo todo lo que hago de [este curso de Flask](
 
 ##### Section 1: Welcome! ✔️
 
-##### Section 2: A Full Python Refresher 48/68
+##### Section 2: A Full Python Refresher 51/68
 
 ##### Section 3: Your first REST API 0/9
 
