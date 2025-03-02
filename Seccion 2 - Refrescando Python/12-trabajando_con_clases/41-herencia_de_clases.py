@@ -14,7 +14,7 @@ class Device:
 
 
 # Al heredar de la clase Device, sus métodos también son accesibles desde Printer, sin tener que declararlos explícitamente.
-# Para usar los métodos de la clase heredada, hay que referenciar la clase heredada con super().
+# Para usar los métodos de la clase heredada, hay que hacer referencia a la clase heredada con super().
 class Printer(Device):
     def __init__(self, name, connected_by, capacity):
         super().__init__(

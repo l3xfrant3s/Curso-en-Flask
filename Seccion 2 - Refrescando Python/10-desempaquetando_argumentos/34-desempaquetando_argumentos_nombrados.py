@@ -1,7 +1,11 @@
-# Dos asteriscos en los argumentos de la declaración de una función indican
-# que se está esperando una cantidad indefinida de argumentos nombrados.
-# Se convertirán en un diccionario, tomando el nombre del parámetro como
-# clave y el valor asignado como valor del par, efectivamente empaquetándolo.
+"""
+Dos asteriscos en los argumentos de la declaración de una función indican
+que se está esperando una cantidad indefinida de argumentos nombrados.
+Se convertirán en un diccionario, tomando el nombre del parámetro como
+clave y el valor asignado como valor del par, efectivamente empaquetándolo.
+"""
+
+
 def named(**kwargs):
     print(kwargs)
 
@@ -13,8 +17,10 @@ def named(name, age):
     print(name, age)
 
 
-# Usando los mismos asteriscos en la llamada, se puede pasar
-# un diccionario como argumentos nombrados, desempaquetándolo
+"""
+Usando los mismos asteriscos en la llamada, se puede pasar un diccionario como argumentos nombrados, desempaquetándolo.
+"""
+
 details = {"name": "Bob", "age": 25}
 
 named(**details)  # named(name="Bob", age=25)
@@ -46,6 +52,7 @@ def both(*args, **kwargs):
 
 # Se sigue aplicando la norma de que los argumentos posicionales se ponen antes
 # que los nombrados, aunque ahora aceptaría un número potencialmente ilimitado de argumentos
+
 both(1, 3, 5, name="Bob", age=25)
 
 """
