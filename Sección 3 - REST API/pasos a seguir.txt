@@ -1,0 +1,8 @@
+Para llegar aquí he seguido estos pasos:
+
+- Creé un entorno virtual usando el comando en la terminal python3.13 -m venv .venv, para crear un entorno virtual e instalar localmente Flask luego.
+- Luego, como estoy usando VSCode, pulso Control + Mayúsculas + P, o pulso en la barra buscadora de arriba y teclo un símbolo de mayor que ( > ).
+- Busco "Select interpreter" para cambiar la versión de Python a la que apunte a la carpeta .venv que he creado.
+- Luego en la terminal hago pip install flask, para instalar el módulo de Flask.
+- Y a partir de ahí, empezamos con el código.
+- Una vez terminado el código, lo probaremos con flask run en la terminal.
