@@ -6,7 +6,7 @@ En este repositorio voy a ir poniendo todo lo que hago de [este curso de Flask](
 
 ##### Section 2: A Full Python Refresher ✔️
 
-##### Section 3: Your first REST API 2/9
+##### Section 3: Your first REST API 4/9
 
 ##### Section 4: Introduction to Docker 0/5
 
