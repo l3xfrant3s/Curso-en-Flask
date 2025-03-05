@@ -36,12 +36,13 @@ def secure_function(func):
         return func
 
 
-get_admin_password = secure_function(get_admin_password)
+# get_admin_password = secure_function(get_admin_password)
 
 # Ahora no podemos usar la función para obtener la contraseña a menos que seamos
-# admin, es más, tira un error si eres cualquier otra cosa que no sea admin
-print(get_admin_password())
-# No es ideal
+# admin, es más, tira un error si eras cualquier otra cosa que no sea admin,
+# cuando se declara la función, lo cual no es ideal
+
+# print(get_admin_password())  # Tira un error y detiene la ejecución (queda comentado para que no lo haga)
 
 
 # Aquí entran en juego los decoradores, que nos permitirán reusar la función de arriba sin modificarla
@@ -58,4 +59,7 @@ def make_secure(func):
 
 get_admin_password = make_secure(get_admin_password)
 
-print(get_admin_password())
+user = {"username": "jose", "access_level": "guest"}
+print(get_admin_password())  # Imprime No admin permissions for jose
+user = {"username": "jose", "access_level": "admin"}
+print(get_admin_password())  # Imprime 1234
