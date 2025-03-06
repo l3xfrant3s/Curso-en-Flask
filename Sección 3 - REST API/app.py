@@ -68,3 +68,21 @@ def create_item(name):
 #   "price": 1799
 # }
 # a esta url: http://localhost:5000/stores/My Store 2/item, después de haber creado la tienda correspondiente
+
+
+# Usando lo aprendido anteriormente, vamos a crear un par de endpoints para obtener los datos de una tienda y los artículos una tienda
+@app.get("/stores/<string:name>")
+def get_store(name):
+    for store in stores:
+        if store["name"] == name:
+            return store
+    return {"message": "Store not found"}, 404
+
+
+@app.get("/stores/<string:name>/item")
+def get_store_items(name):
+    for store in stores:
+        if store["name"] == name:
+            return {"items": store["items"]}
+            # Es preferíble devolver un diccionario con un solo elemento por si queremos modificar este return en el futuro.
+    return {"message": "Store not found"}, 404
