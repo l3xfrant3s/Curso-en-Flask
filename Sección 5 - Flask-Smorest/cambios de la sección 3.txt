@@ -1,0 +1,6 @@
+Con respecto a la sección 3, añadimos un archivo requirements.txt, el cual contiene los nombres de los paquetes de Python para ser instalados de una vez cuando usamos el comando pip install -r requiremements.txt.
+
+Añadimos un archivo .flaskenv, que contiene variables de entorno para cuando corramos Flask. Aquí, le estamos diciendo que use un archivo llamado app cuando ejecute Flask, y que active el debugger.
+
+Creamos un archivo db.py para guardar la "base de datos", que ahora tendrá una forma distinta, separando las tiendas de sus artículos en dos diccionarios. Así también podemos asignar un identificador único a cada tienda y a cada artículo.
+
