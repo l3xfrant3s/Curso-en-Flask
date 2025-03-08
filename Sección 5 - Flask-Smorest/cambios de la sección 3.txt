@@ -4,3 +4,4 @@ Añadimos un archivo .flaskenv, que contiene variables de entorno para cuando co
 
 Creamos un archivo db.py para guardar la "base de datos", que ahora tendrá una forma distinta, separando las tiendas de sus artículos en dos diccionarios. Así también podemos asignar un identificador único a cada tienda y a cada artículo.
 
+app.py ha sido modificado para que sea más compatible con bases de datos cuando pasemos a usar eso una sección más adelante.
