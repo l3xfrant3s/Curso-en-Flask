@@ -1,0 +1,12 @@
+Para debugguear la aplicación Flask, hay que crear un archivo docker-compose nuevo para el debugger, el cual, además del setup que ya hacía docker-compose, va a instalar debugpy de forma temporal y lo va a exponer por el puerto 5678 para poder conectarnos.
+Con ese archivo creado, podemos iniciar el contendor con:
+
+docker compose -f docker-compose.debug.yml up
+
+El parámetro -f es para especificar qué archivo usar, pero en el futuro, cuando usemos una base de datos, es preferible usar este otro:
+
+docker compose -f docker-compose.yml -f docker-compose.debug.yml up
+
+El cual usará el primer archivo pero sobreescribirá aquellos servicios que estén definidos en ambos con los del segundo archivo.
+
+Una vez tengamos el contenedor corriendo, va a esperar a que nos conectemos con un debugger antes de correr Flask. Para ello, nos vamos en VSCode a la pestaña de debug, le damos a "create a launch.json file", escogemos "Python Debugger", luego "Remote Attach", y dejamos lo último como estaba (dirección localhost, puerto 5678), así va a crear un archivo de debugging, que podremos ejecutar dándole al botón de arriba. Ahora, si ponemos algún breakpoint en algún endpoint de app.py, haciendo click a la izquierda del número de la línea para poner un punto rojo, y luego hacemos algo que lo ejecute, entonces se detendrá la ejecución justo antes de correr esa línea para que nosotros podamos, por ejemplo, ver el valor actual de alguna variable o añadir más código antes de continuar con la ejecución.

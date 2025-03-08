@@ -1,0 +1,16 @@
+# En este archivo cambiamos un poco la definición del servicio web:
+# Añadimos un puerto distinto para el debugger
+# Ejecutará el comando de abajo  tan largo, que básicamente dice:
+# Ejecuta el siguiente comando en la consola: instala la extensión de Python debugpy en /tmp Y
+# Corre en Python en la carpeta /tmp/debugpy, esperando por el cliente y escuchando por el puerto 5678:
+# flask sin debugger, sin recargar, escuchando a cualquier dirección que quiera conectarse y por el puerto 5000
+
+services:
+  web:
+    build: .
+    ports:
+      - "5005:5000"
+      - "5678:5678"
+    volumes:
+      - .:/app
+    command: ["sh", "-c", "pip install debugpy -t /tmp && python /tmp/debugpy --wait-for-client --listen 0.0.0.0:5678 -m flask run --no-debugger --no-reload --host 0.0.0.0 --port 5000"]

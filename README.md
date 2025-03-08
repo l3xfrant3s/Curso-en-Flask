@@ -8,7 +8,7 @@ En este repositorio voy a ir poniendo todo lo que hago de [este curso de Flask](
 
 ##### Section 3: Your first REST API ✔️
 
-##### Section 4: Introduction to Docker 3/5
+##### Section 4: Introduction to Docker ✔️
 
 ##### Section 5: Flask-Smorest for more efficient development 0/8
 
