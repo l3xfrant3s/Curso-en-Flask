@@ -1,0 +1,13 @@
+Primero, creamos el archivo Dockerfile
+
+Luego, asumiendo que estamos en la carpeta "Sección 4 - Docker", usamos el comando:
+
+docker build -t rest-apis-flask-python .
+
+Construirá la imagen en base a al archivo Dockerfile y le dará el nombre "rest-apis-flask-python". NO TE OLVDIDES DEL PUNTO
+
+Por último, ejecutamos este comando para crear un contenedor en base a la imagen creada:
+
+docker run -d -p 5005:5000 rest-apis-flask-python
+
+Correr el contenedor como "-d"aemon (de fondo), reenviando del puerto 5005 de nuestra máquina al 5000 del contenedor y en base a la imagen rest-apis-flask-python
