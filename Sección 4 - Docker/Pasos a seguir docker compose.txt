@@ -1,0 +1,10 @@
+Para crear los contenedores usando Docker Compose, solo hay que crear el archivo 
+docker-compose.yml, y luego ejecutar en la consola el comando:
+
+docker compose up
+
+Estando en la misma carpeta que el archivo docker-compose.
+
+Si por la razón que sea, hiciera falta rehacer algún contenedor, se podría usar este comando:
+
+docker compose up --build --force-recreate --no-deps web

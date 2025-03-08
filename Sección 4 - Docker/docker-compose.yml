@@ -1,0 +1,14 @@
+# Usando docker compose podemos, además, crear el o los contenedores necesarios para hacer funcionar nuestro proyecto, lo cual será útil cuando usemos una base de datos.
+# Abajo, efectivamente pone:
+# Usando los siguientes servicios
+# Crea uno llamado "web" usando el Dockerfile puedes encontrar en esta misma carpeta ("Sección 4 - Docker")
+# Redirige al puerto externo 5005 el tráfico del puerto interno 5000.
+# Crea, en base a esta misma carpeta ("Sección 4 - Docker") una nueva en el contenedor en "/app"
+services:
+  web:
+    build: .
+    ports:
+      - "5005:5000"
+    volumes:
+      - .:/app
+    
