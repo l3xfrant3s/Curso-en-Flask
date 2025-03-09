@@ -1,10 +1,10 @@
 import uuid
 
-from flask import request
 from flask.views import MethodView
 from flask_smorest import Blueprint, abort
 
 from db import stores
+from schemas import StoreSchema
 
 # Un Blueprint se usas para dividir una API en varios segmentos. Este es otro método que también existe en Flask, a falta de algún añadido en F-Smorest.
 # MethodView se usa para crear clases cuyos métodos se dirijan a ciertos endpoints
@@ -32,35 +32,15 @@ class Store(MethodView):
         except KeyError:
             abort(404, message="Store not found.")
 
-    def put(self, store_id):
-        store_data = request.get_json()
-        if "name" not in store_data:
-            abort(
-                400,
-                message="Bad request. Ensure 'name' is included in the JSON payload.",
-            )
-        try:
-            store = stores[store_id]
-            store |= store_data
-            return store
-        except KeyError:
-            abort(404, message="Store not found.")
-
 
 @blp.route("/store")
 class StoreList(MethodView):
     def get(self):
         return {"stores": list(stores.values())}
 
-    def post(self):
-        store_data = request.get_json()
-
-        if "name" not in store_data:
-            abort(
-                400,
-                message="Bad request. Ensure 'name' is included in the JSON payload.",
-            )
-
+    # Escrito después de usar marshmallow, algunos métodos han sido cambiados para usar los Schemas
+    @blp.arguments(StoreSchema)
+    def post(self, store_data):
         for store in stores.values():
             if store_data["name"] == store["name"]:
                 abort(400, message="This store already exists")
