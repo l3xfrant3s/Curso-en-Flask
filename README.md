@@ -12,7 +12,7 @@ En este repositorio voy a ir poniendo todo lo que hago de [este curso de Flask](
 
 ##### Section 5: Flask-Smorest for more efficient development ✔️
 
-##### Section 6: Store data in a SQL database with SQLAlchemy 0/11
+##### Section 6: Store data in a SQL database with SQLAlchemy 1/11
 
 ##### Section 7: Many-to-many relationships with SQLAlchemy 0/3
 
