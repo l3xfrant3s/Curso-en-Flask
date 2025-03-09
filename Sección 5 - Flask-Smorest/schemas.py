@@ -1,6 +1,6 @@
 from marshmallow import Schema, fields
 
-# Los Schemas de marshmallow se usan para facilitar la validación de los datos recibidos.
+# Los Schemas de marshmallow se usan para facilitar la validación de los datos recibidos o enviados.
 
 # Aquí se define una clase heredera de Schema por cada tipo de operación distintiva que use un grupo distinto de datos, similar a como se separaban las clases al usar Blueprints.
 

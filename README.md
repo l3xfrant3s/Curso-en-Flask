@@ -10,7 +10,7 @@ En este repositorio voy a ir poniendo todo lo que hago de [este curso de Flask](
 
 ##### Section 4: Introduction to Docker ✔️
 
-##### Section 5: Flask-Smorest for more efficient development 7/8
+##### Section 5: Flask-Smorest for more efficient development ✔️
 
 ##### Section 6: Store data in a SQL database with SQLAlchemy 0/11
 
