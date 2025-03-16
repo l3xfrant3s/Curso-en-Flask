@@ -8,16 +8,9 @@ from schemas import ItemSchema, ItemUpdateSchema
 
 blp = Blueprint("Items", __name__, description="Operations on items")
 
-# Vamos a usar los Schemas para validar la entrada de datos de aquellos métodos que reciben datos del usuario
-# Estos Schemas también aparecerán en la documentación de Swagger UI
-
-# Allá donde veas un decorador blp.arguments, se ha eliminado el if que comprueba la entrada y el get_json que recibía los datos dentro del método
-
 
 @blp.route("/item/<string:item_id>")
 class Item(MethodView):
-    # Se usa el decorador de abajo para definir la respuesta principal de un método que devuelve datos al usuario
-    # Se pone el código de respuesta HTTP y el Schema de los datos que va a devolver
     @blp.response(200, ItemSchema)
     def get(self, item_id):
         try:
@@ -33,7 +26,7 @@ class Item(MethodView):
             abort(404, message="Item not found.")
 
     @blp.arguments(ItemUpdateSchema)
-    @blp.response(200, ItemSchema)  # Este decorador se pone debajo del de entrada
+    @blp.response(200, ItemSchema)
     def put(self, item_data, item_id):
         try:
             item = items[item_id]
@@ -45,19 +38,13 @@ class Item(MethodView):
 
 @blp.route("/item")
 class ItemList(MethodView):
-    # Se pone el parámetro many si el método devuelve varios objetos que siguen el Schema
     @blp.response(200, ItemSchema(many=True))
     def get(self):
-        # Al hacerlo así, pasamos de devolver algo que convertimos a lista a una lista sin más
         return items.values()
 
-    # Del método post eliminamos el if que comprueba los datos recibidos
-    @blp.arguments(ItemSchema)  # En su lugar usamos este decorador
+    @blp.arguments(ItemSchema)
     @blp.response(201, ItemSchema())
     def post(self, item_data):
-        # Y en la definición ponemos un parámetro extra para los datos a validar.
-        # Este siempre va después del self y puede llamarse lo que sea.
-        # Sustituye el get_json que había antes.
         for item in items.values():
             if (
                 item_data["name"] == item["name"]
